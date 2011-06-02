@@ -102,11 +102,12 @@
 (autoload 'markdown-mode "markdown-mode.el"
    "Major mode for editing Markdown files" t)
 (setq auto-mode-alist
-   (cons '("\\.md" . markdown-mode) auto-mode-alist))
+   (cons '("\\.md$" . markdown-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
+
 
 ;;;;;;;;;;;;;;;;
-;; html mode for HTML fils
-
+;; html mode for HTML files
 (setq auto-mode-alist (cons '("\\.html?$" . html-mode) auto-mode-alist))
 
 ;;;;;;;;;;;;;;;;
