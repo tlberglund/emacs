@@ -191,3 +191,9 @@
 (add-to-list 'load-path "~/opt/slime")
 (require 'slime)
 (slime-setup)
+
+
+(add-to-list 'load-path "~/.emacs.d/doc-mode")
+(autoload 'doc-mode "doc-mode")
+(add-to-list 'auto-mode-alist '("\\.asc$" . doc-mode))
+(add-to-list 'auto-mode-alist '("\\.ascii$" . doc-mode))
