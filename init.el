@@ -21,7 +21,8 @@
 ;; set up alt key to work as META on Mac
 (set-keyboard-coding-system 'mac-roman)
 ;; (mac-key-mode)
-(setq mac-option-modifier 'meta)
+;; http://www.emacswiki.org/emacs/AquamacsFAQ#toc6
+;;(setq mac-option-modifier 'meta)
 ;;(setq mac-command-key-is-meta nil)
 
 (put 'downcase-region 'disabled nil)
@@ -30,6 +31,8 @@
 ;; always use spaces instead of tabs
 (setq-default indent-tabs-mode nil)
 
+;; Merge the kill ring with the clipboard
+(setq x-select-enable-clipboard t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; load some handy extensions
@@ -140,57 +143,6 @@
   (shell-command-on-region (point-min) (point-max) "wc -w"))
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; slime
-
-;; (add-hook 'slime-connected-hook 'slime-ensure-typeout-frame)
-;; (require 'slime)
-;; (push (list 'clisp-2.35 (list "~/bin/lispbox-0.7/clisp-2.35/bin/clisp" "-ansi" "-K" "full" "-B" "/Applications/Lispbox/clisp-2.35/lib/clisp")) slime-lisp-implementations)
-;; (slime-setup)
-(custom-set-variables
-  ;; custom-set-variables was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- '(longlines-wrap-follows-window-size t)
- '(mac-command-modifier (quote alt))
- '(mac-font-panel-mode nil)
- '(speedbar-use-images nil)
- '(tool-bar-mode nil))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom.
-  ;; If you edit it by hand, you could mess it up, so be careful.
-  ;; Your init file should contain only one such instance.
-  ;; If there is more than one, they won't work right.
- )
-
-
-;;; This was installed by package-install.el.
-;;; This provides support for the package system and
-;;; interfacing with ELPA, the package archive.
-;;; Move this code earlier if you want to reference
-;;; packages in your .emacs.
-(when
-    (load
-     (expand-file-name "~/.emacs.d/elpa/package.el"))
-  (package-initialize))
-;; clojure-mode
-(add-to-list 'load-path "~/opt/clojure-mode")
-(require 'clojure-mode)
-;; swank-clojure
-(add-to-list 'load-path "~/opt/swank-clojure")
-(require 'swank-clojure-autoload)
-(swank-clojure-config
- (setq swank-clojure-jar-path "~/.clojure/clojure.jar")
-  (setq swank-clojure-extra-classpaths
-         (list "~/.clojure/clojure-contrib.jar")))
-;; slime
-(eval-after-load "slime"
-  '(progn (slime-setup '(slime-repl))))
-
-(add-to-list 'load-path "~/opt/slime")
-(require 'slime)
-(slime-setup)
 
 
 (add-to-list 'load-path "~/.emacs.d/doc-mode")
