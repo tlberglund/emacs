@@ -144,8 +144,28 @@
 
 
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Doc mode didn't parse code block `stuff` in Asciidoc very well
+; (add-to-list 'load-path "~/.emacs.d/doc-mode")
+; (autoload 'doc-mode "doc-mode")
+; (add-to-list 'auto-mode-alist '("\\.asc$" . doc-mode))
+; (add-to-list 'auto-mode-alist '("\\.ascii$" . doc-mode))
 
-(add-to-list 'load-path "~/.emacs.d/doc-mode")
-(autoload 'doc-mode "doc-mode")
-(add-to-list 'auto-mode-alist '("\\.asc$" . doc-mode))
-(add-to-list 'auto-mode-alist '("\\.ascii$" . doc-mode))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; ADOC ASCIIDOC package
+;; Even shows headers in difference sizes
+(add-to-list 'load-path "~/.emacs.d/adoc-mode")
+(autoload 'adoc-mode "adoc-mode")
+;; Associate it to the .asc file extension
+(add-to-list 'auto-mode-alist (cons "\\.asc\\'" 'adoc-mode))
+
+;; Save the state of the desktop and restore it upon reopening emacs
+;; Saving to the user's home directory seems to be the best choice.
+;; That is what is used as the default location to search for the .emacs.desktop file.
+;; Multiple files can be loaded.
+(desktop-save-mode 1)
+
+;; I don't like fill unless I want it, so set it to an insanely large number
+;(set-fill-column 50000)
+(auto-fill-mode -1)
