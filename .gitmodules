@@ -1,0 +1,3 @@
+[submodule "asciidoc-el"]
+	path = asciidoc-el
+	url = https://github.com/metaperl/asciidoc-el.git
