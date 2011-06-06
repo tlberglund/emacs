@@ -169,3 +169,7 @@
 ;; I don't like fill unless I want it, so set it to an insanely large number
 ;(set-fill-column 50000)
 (auto-fill-mode -1)
+
+;; git-emacs package. Using magit for now instead
+ ;(add-to-list 'load-path "~/.emacs.d/git-emacs")
+ ;(autoload 'git-emacs "git-emacs")
