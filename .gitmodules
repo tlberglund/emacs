@@ -1,3 +1,6 @@
 [submodule "asciidoc-el"]
 	path = asciidoc-el
 	url = https://github.com/metaperl/asciidoc-el.git
+[submodule "git-emacs"]
+	path = git-emacs
+	url = https://github.com/tsgates/git-emacs.git
