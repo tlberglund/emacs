@@ -7,7 +7,6 @@
 ;; scala
 ;;(add-to-list 'load-path "~/work/emacs/scala")  
 ;;(require 'scala-mode-auto)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; customizations
 
@@ -164,6 +163,7 @@
 ;; Saving to the user's home directory seems to be the best choice.
 ;; That is what is used as the default location to search for the .emacs.desktop file.
 ;; Multiple files can be loaded.
+(setq desktop-dirname "~")
 (desktop-save-mode 1)
 
 ;; I don't like fill unless I want it, so set it to an insanely large number
@@ -173,3 +173,8 @@
 ;; git-emacs package. Using magit for now instead
  ;(add-to-list 'load-path "~/.emacs.d/git-emacs")
  ;(autoload 'git-emacs "git-emacs")
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Custom Tim Config
+(require 'tim-config)

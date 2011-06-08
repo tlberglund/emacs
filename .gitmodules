@@ -4,3 +4,6 @@
 [submodule "git-emacs"]
 	path = git-emacs
 	url = https://github.com/tsgates/git-emacs.git
+[submodule "groovy"]
+	path = groovy
+	url = ./groovy/
